@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+  <style>
+    div{
+        width:100%;
+        font-size:larger;
+        background-color: aquamarine;
+    }
+    body{
+        border: 10px solid black;
+        margin:20px;
+        padding:5%;
+        width:70%;
+        font-size:medium;
+    }
+    input[type=text],input[type=number],input[type=email],input[type=password],select
+    {
+        width:100%;
+        padding:12px 20px;
+        margin:8px 0;
+        display:inline-block;
+        border:1px solid #ccc;
+        box-sizing:border-box;
+        font-size:14px;
+    }
+    input[type=submit]
+    {
+        width:100%;
+        background-color:#003399;
+        color:white;
+        padding:14px 20px;
+        margin:8px 0;
+        border:none;
+        border-radius:4px;
+        cursor:pointer;
+        font-size:16px;
+    }
+    input[type=submit]:hover
+    {
+        background-color:#2F4F4F;
+    }
+  </style>
+  <script>
+    function validateform()
+    { 
+        var fn=document.form["regform"]["Fname"].value;
+        var ln=document.form["regform"]["age"].value;
+        var pass=document.form["regform"]["pass"].value;
+        var cpass=document.form["regform"]["cpass"].value;
+        var gn=document.form["regform"]["gender"];
+        var ctry=document.forms["regform"]["country"];
+        if(fn==null || fn==="")
+        {
+            alert("First name cannot be blank");
+            return False;
+        }
+        else if(age==null || ln==="")
+        {
+            alert("Enter age");
+            return false;
+        }
+        else if((gn[0].checked===false) || (gn[1].checked===false))
+        {
+            alert("please enter your gender");
+            return false;
+        }
+        else if(ctry.selectedIndex==0)
+        {
+            alert("Enter your country");
+            return false;
+        }
+    }
+  </script>
+  <body>
+    <h1 style="text-align: center;">REGISTRATION FORM</h1>
+    <div>
+        <form name="regform" method="post" onsubmit=validateform()>
+            <label for="Fname">Full Name</label><br>
+            <input type="text" id="Fname" placeholder="Enter your Full name" required><br>
+            <label for="age">Age</label><br>
+            <input type="number" id="age" placeholder="Enter your Age" required><br>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" placeholder="Enter your Email" required><br>
+            <label for="pass">Password</label>
+            <input type="password" id="pass" placeholder="Enter your password" required>
+            <label for="cpass">Confirm Password</label><br>
+            <input type="password" id="cpass" placeholder="confirm password" required><br>
+            <label for="gender">Gender</label><br>
+            <input type="radio" id="male" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" value="female">
+            <label for="female">Female</label><br>
+            <label for="Skills">Skills</label><br>
+            <input type="radio" id="C" value="C">
+            <label for="C">C</label><br>
+            <input type="radio" id="C++" value="C++">
+            <label for="C++">C++</label><br>
+            <input type="radio" id="Java" value="Java">
+            <label for="Java">Java</label><br>
+            <input type="radio" id="Python" value="Python">
+            <label for="Python">Python</label><br>
+            <label for="country">Country</label>
+            <select id="country" name="country" >
+            <option value="usa">USA</option>
+            <option value="india">India</option>
+            <option value="japan">Japan</option>
+            <option value="china">China</option>
+            </select><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+  </body>
+</html>
